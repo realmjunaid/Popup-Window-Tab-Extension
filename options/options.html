@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Popup Window Tab settings</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header class="mast">
+        <div class="mark" aria-hidden="true">
+          <div class="mark-glass"></div>
+          <span class="handle handle-n"></span>
+          <span class="handle handle-e"></span>
+          <span class="handle handle-s"></span>
+          <span class="handle handle-w"></span>
+          <span class="handle handle-se"></span>
+        </div>
+        <div>
+          <h1>Popup Window Tab</h1>
+          <p class="help">
+            On the sites you save, a link that would open a new tab opens in a popup window
+            instead. Drag any edge or corner of that window to make it bigger or smaller.
+          </p>
+        </div>
+      </header>
+
+      <form id="add-form">
+        <div class="add-row">
+          <div>
+            <label for="domain">Domain</label>
+            <input
+              id="domain"
+              name="domain"
+              type="text"
+              placeholder="example.com"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            />
+          </div>
+          <button class="primary" type="submit">Add site</button>
+        </div>
+        <label class="check" for="subdomains">
+          <input id="subdomains" type="checkbox" checked />
+          Include subdomains
+        </label>
+        <p id="add-error" class="problem" role="status"></p>
+      </form>
+
+      <fieldset>
+        <legend>Which clicks open a popup window</legend>
+        <label class="choice">
+          <input type="radio" name="mode" value="newtab" />
+          Only links that would open a new tab
+        </label>
+        <label class="choice">
+          <input type="radio" name="mode" value="all" />
+          Every link, leaving this page where it is
+        </label>
+        <p class="help">Hold Alt while clicking if you want the browser to handle that link normally.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Window size</legend>
+        <p class="help">
+          Drag any edge or corner of the popup window, or the brass grip on the page. The next one opens at the size and place you left it.
+        </p>
+        <div class="size-row">
+          <label>
+            Width
+            <input id="width" type="number" min="240" max="2400" step="10" inputmode="numeric" />
+          </label>
+          <label>
+            Height
+            <input id="height" type="number" min="180" max="1600" step="10" inputmode="numeric" />
+          </label>
+          <button id="reset-size" class="text-btn" type="button">Reset size</button>
+        </div>
+      </fieldset>
+
+      <section>
+        <h2>Saved sites</h2>
+        <p id="empty" class="help">No sites yet. Enable the site you are on, or add a domain above.</p>
+        <ul id="sites"></ul>
+      </section>
+    </main>
+    <script src="../shared.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

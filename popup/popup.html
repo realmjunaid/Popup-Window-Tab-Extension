@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Popup Window Tab</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <div class="mark" aria-hidden="true">
+        <div class="mark-glass"></div>
+        <span class="handle handle-n"></span>
+        <span class="handle handle-e"></span>
+        <span class="handle handle-s"></span>
+        <span class="handle handle-w"></span>
+        <span class="handle handle-se"></span>
+      </div>
+      <h1 id="site-name">This tab</h1>
+      <p id="status"></p>
+      <button id="toggle" type="button" disabled>Enable this site for popup window</button>
+      <p id="size-note" class="muted"></p>
+      <div class="foot">
+        <button id="settings" class="text-btn" type="button">Site settings</button>
+        <span id="count" class="muted"></span>
+      </div>
+    </main>
+    <script src="../shared.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

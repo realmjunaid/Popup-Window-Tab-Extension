@@ -1,0 +1,157 @@
+:root {
+  --mist: #f3f6f7;
+  --glass: #e8eef1;
+  --seam: #b7c3cb;
+  --frame: #2c3a42;
+  --ink: #1c2428;
+  --muted: #3e4c53;
+  --brass: #c4a15a;
+  --brass-ink: #f3e6c4;
+  --problem: #7a4e12;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: Bahnschrift, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--frame);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.mark {
+  position: relative;
+  background: var(--frame);
+  padding: 0.4rem;
+  user-select: none;
+}
+
+.mark-glass {
+  height: 100%;
+  background: var(--glass);
+  border-top: 0.55rem solid var(--frame);
+}
+
+.handle {
+  position: absolute;
+  background: var(--brass);
+}
+
+.handle-n,
+.handle-s {
+  width: 1.35rem;
+  height: 0.28rem;
+  left: 50%;
+  margin-left: -0.675rem;
+}
+
+.handle-n {
+  top: 0;
+}
+
+.handle-s {
+  bottom: 0;
+}
+
+.handle-e,
+.handle-w {
+  width: 0.28rem;
+  height: 1.35rem;
+  top: 50%;
+  margin-top: -0.675rem;
+}
+
+.handle-e {
+  right: 0;
+}
+
+.handle-w {
+  left: 0;
+}
+
+.handle-se {
+  width: 0.72rem;
+  height: 0.72rem;
+  right: 0;
+  bottom: 0;
+}
+
+.primary,
+.toggle {
+  background: var(--frame);
+  color: var(--brass-ink);
+  border: 1px solid var(--brass);
+  border-radius: 2px;
+}
+
+.primary:hover,
+.toggle:hover {
+  background: #243139;
+}
+
+.toggle[data-state="on"] {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--frame);
+}
+
+.toggle[data-state="on"]:hover {
+  background: var(--glass);
+}
+
+.primary:disabled,
+.toggle:disabled {
+  background: var(--glass);
+  color: var(--muted);
+  border-color: var(--seam);
+  cursor: not-allowed;
+}
+
+.text-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--frame);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.help,
+.muted {
+  color: var(--muted);
+}
+
+.problem {
+  color: var(--problem);
+  min-height: 1.4em;
+}
